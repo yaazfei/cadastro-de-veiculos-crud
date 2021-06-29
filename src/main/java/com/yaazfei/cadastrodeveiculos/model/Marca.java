@@ -4,8 +4,10 @@ public enum Marca {
 
 	FIAT,
 	FORD,
-	FERRARI;
-	
+	FERRARI,
+	VOLKSWAGEN,
+	HYUNDAI,
+	NISSAN;
 	
 	
 	

@@ -20,7 +20,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.yaazfei.cadastrodeveiculos.dto.AnoTotal;
+import com.yaazfei.cadastrodeveiculos.dto.DecadaTotal;
 import com.yaazfei.cadastrodeveiculos.dto.FiltroVeiculo;
+import com.yaazfei.cadastrodeveiculos.dto.MarcaTotal;
 import com.yaazfei.cadastrodeveiculos.dto.StatusVenda;
 import com.yaazfei.cadastrodeveiculos.dto.Total;
 import com.yaazfei.cadastrodeveiculos.model.Veiculo;
@@ -92,5 +95,14 @@ public class VeiculoController {
 		return ResponseEntity.ok(1);	
 	}
 	
+	@GetMapping ("/marcas/total")
+	public ResponseEntity<List<MarcaTotal>> buscarTotalPorMarca(){
+		return ResponseEntity.ok(this.veiculoService.buscarTotalPorMarca());
+	}
+
+	@GetMapping ("/decadas/total")
+	public ResponseEntity<List<DecadaTotal>> buscarTotalPorDecada(){
+		return ResponseEntity.ok(this.veiculoService.buscarTotalPorDecada());
+	}
 	
 }
